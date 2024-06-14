@@ -4,7 +4,7 @@ int main()
 {
     long long n;
     cin >> n;
-    if (n<=4){
+    if (n<4){
         cout<<"NO SOLUTION";
         return 0;
     }
