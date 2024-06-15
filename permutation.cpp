@@ -4,22 +4,26 @@ int main()
 {
     long long n;
     cin >> n;
-    if (n<4){
-        cout<<"NO SOLUTION";
+    if (n < 4)
+    {
+        if (n == 1)
+        {
+            cout << n;
+        }
+        else
+        {
+            cout << "NO SOLUTION";
+            
+        }
         return 0;
     }
-    for (long long i = n; i >= 1; i--)
-    {
-        if (i % 2 == 0)
-        {
-            cout << i << " ";
-        }
+   // writing even numbers
+    for (int i = 2; i <= n; i += 2) {
+        cout << i << " ";
     }
-    for (long long i = n; i >= 1; i--)
-    {
-        if (i % 2 != 0)
-        {
-            cout << i << " ";
-        }
+ 
+    // writing odd numbers
+    for (int i = 1; i <= n; i += 2) {
+        cout << i << " ";
     }
 }
