@@ -1,11 +1,12 @@
 #include <iostream>
+#define ll long long
 
 using namespace std;
 int main()
 {
-    long long n;
+    ll n;
     cin >> n;
-    long long sum = (n * (n + 1)) / 2;
+    ll sum = (n * (n + 1)) / 2;
     if (sum % 2 != 0)
     {
         cout << "NO";
@@ -15,7 +16,7 @@ int main()
     {
         cout << "YES" << endl;
         cout << n / 2 << endl; // size of the first set
-        for (long long i = n; i > n - n / 4; i--)
+        for (ll i = n; i > n - n / 4; i--)
         {
             cout << i << " ";
             cout << n - i + 1 << " ";
@@ -31,7 +32,7 @@ int main()
             cout << n / 2 << endl; // size of the second set
         }
 
-        for (long long i = n / 4 + 1; i < n - n / 4; i++)
+        for (ll i = n / 4 + 1; i < n - n / 4; i++)
         {
             cout << i << " ";
         }
