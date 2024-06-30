@@ -10,7 +10,7 @@ long long mod_exp(long long base, long long exp, long long mod)
     {
         if (exp % 2 == 1)
         {
-            // If exp is odd
+            // If expo is odd
             result = (result * base) % mod;
         }
         base = (base * base) % mod; // Square the base
