@@ -22,8 +22,8 @@ int main()
     sort(avlAppratment, avlAppratment+m);
     ll i=0 , j=0,count =0;
     while (i<n and j<m){
-        int diff = desiredSize[i]-avlAppratment[j];
-        if(diff>=0 and diff<=k){
+        ll diff = (desiredSize[i]-avlAppratment[j]);
+        if(abs(diff)>=0 && abs(diff)<=k){
             count++;
             i++;
             j++;
@@ -31,7 +31,7 @@ int main()
         else if(diff>k){
             j++;
         }
-        else if(diff<k){
+        else {
             i++;
         }
     }
