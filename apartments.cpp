@@ -20,7 +20,7 @@ int main()
     sort(desiredSize, desiredSize + n);
 
     sort(avlAppratment, avlAppratment+m);
-    ll i , j,count =0;
+    ll i=0 , j=0,count =0;
     while (i<n and j<m){
         int diff = desiredSize[i]-avlAppratment[j];
         if(diff>=0 and diff<=k){
