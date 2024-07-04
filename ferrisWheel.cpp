@@ -19,26 +19,17 @@ int main()
     }
     sort(vec.begin(), vec.end());
     ll i = 0;
+    ll j = n - 1;
     ll cnt = 0;
-    
-    while (i < n)
-    {
-        if (vec[i] + vec[n] <= x)
-        {
-            cnt++;
-            i++;
-            n--; }
-        // else if (vec[i] == x)
-        // {
-        //     cnt++;
-        //     i++;
-        // }
-        else
-        {
-            cnt++;
-            n--;
-        }
-    }
 
+    while (i <= j)
+    {
+        if (vec[i] + vec[j] <= x)
+        {
+            i++;
+        }
+        cnt++;
+        j--;
+    }
     cout << cnt;
 }
