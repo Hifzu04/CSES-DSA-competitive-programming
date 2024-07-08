@@ -1,35 +1,36 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+#define ll long long
 using namespace std;
 
-int main(){
-    long long t ,a , b;
-    cin>>t;
-   for(int i =0 ; i<t; i++){
-       cin>>a>>b;
-       long long sum1 =0 , sum2=0;
-       long long p = a;
-       long long q = b;
-       
-       while(a>=0 and b>=0){
-        if(a>=b){
-            sum1+=2;
-            sum2+=1;
-            a-=2;
-            b-=1;
+int main()
+{
+    ll t, a, b;
+    cin >> t;
+    for (ll i = 0; i < t; i++)
+    {
+        cin >> a >> b;
+        bool mark =0;
+        for (ll i = 0; i <= a / 2; i++)
+        {
+            
+            if ((b == ((2 * a) - (3 * i))) and (b>=a))
+            {
+                cout << "YES"<<endl;
+                mark =1 ;
+                break;
+                
+                
+            }
+            if((b<a) and a==2*b - 3*i){
+                cout<<"YES"<<endl;
+                mark =1 ;
+                break;
+            }
+            
         }
-        else{
-          sum2+=2;
-            sum1+=1;
-            b-=2;
-            a-=1;  
+        if(!mark){
+            cout<<"NO"<<endl;
         }
-       }
-       if((sum1==p and  sum2==q) or (sum1==q and sum2==p)){
-        cout<<"YES";
-       }
-       else{
-        cout<< "NO";
-       }
-
-   } 
+        
+    }
 }
