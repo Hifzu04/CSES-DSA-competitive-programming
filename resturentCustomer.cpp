@@ -13,8 +13,8 @@ int main()
     while (numberCustomer--)
     {
         cin >> arr >> dept;
-        mpp[arr]++;
-        mpp[dept]--;
+        mpp[arr]++;  //mpp[arr] = 1;
+        mpp[dept]--;  //mpp[dept] = -1;
 
     }
 
@@ -22,6 +22,7 @@ int main()
      ll sum=0;
     for (auto it : mpp)
     {
+        cout<<it.first<<" "<<it.second<<endl;
         sum += it.second;
         maxo = max(maxo,sum);
     }
