@@ -3,18 +3,8 @@
 using namespace std;
 
 int main()
+
 {
-    map<int, int> mpp;
-
-    ll n;
-    cin >> n;
-    while (n--)
-    {
-        ll a, b;
-        cin >> a >> b;
-        mpp[a] = b;
-    }
-  
-
-  
+    vector<pair<int,int>>vec;
+    for()
 }
