@@ -1,32 +1,30 @@
 #include <bits/stdc++.h>
+#define ll long long
 using namespace std;
 
 int main()
 {
-
-    int n, x;
+    multimap<ll, ll> mp;
+    ll n, x;
     cin >> n >> x;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++)
+    for (ll i = 0; i < n; i++)
     {
-        cin >> vec[i];
+        ll p;
+        cin >> p;
+        mp.emplace(p, i + 1);
     }
-    sort(vec.begin(), vec.end());
-    int l = 0;
-    int r = n-1;
-    while (l < r)
+    //for (auto it = mp.begin(); it != mp.end();)
+    for (auto it : mp)
     {
-        int sum = vec[l] + vec[r];
-        if (sum == x)
+        long long key = (x - it.first);
+        auto ans = mp.find(key);
+        if ((ans != mp.end()) && ans->second != it.second)
         {
-            cout << l + 1 << " " << r + 1;
+            cout << it.second << " " << ans->second;
             return 0;
         }
-        else if (sum < x)
-            l++;
-        else
-            r--;
     }
+
     cout << "IMPOSSIBLE";
     return 0;
 }
