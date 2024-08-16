@@ -1,43 +1,31 @@
-#include <iostream>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
-int binarySearch(long long key, long long arr[], long long n)
-{
-    long long s = 0;
-    sort(arr.begin , arr.end , )
-    while(s<n){
-        if(key==arr[s]){
-            return arr[s] ;
-        }
-        else if (key<arr[s]){
-            
-        }
-    }
-}
 int main()
 {
-    long long n, x;
+
+    int n, x;
     cin >> n >> x;
-    long long arr[n];
-    for (long long i = 0; i < n; i++)
+    vector<int> vec(n);
+    for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        cin >> vec[i];
     }
-
-    for (long long i = 0; i < n; i++)
+    sort(vec.begin(), vec.end());
+    int l = 0;
+    int r = n-1;
+    while (l < r)
     {
-        long long key = x - arr[i];
-
-        int it = binarySearch(key, arr, n);
-
-        // long long *it = find(arr, arr + n, key);
-        //  // //cout<<*it<<endl;
-        //  // if (it != arr+ n &&  i != (it-arr))
-        //  // {
-        //  //     cout <<i+1<<" "<< (it-arr)+1;
-        //  //     return 0;
-        //  // }
+        int sum = vec[l] + vec[r];
+        if (sum == x)
+        {
+            cout << l + 1 << " " << r + 1;
+            return 0;
+        }
+        else if (sum < x)
+            l++;
+        else
+            r--;
     }
     cout << "IMPOSSIBLE";
     return 0;

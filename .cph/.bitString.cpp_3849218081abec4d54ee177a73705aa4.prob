@@ -1,1 +1,0 @@
-{"name":"Local: bitString","url":"/home/hifzur/work/cses_dsa/bitString.cpp","tests":[{"id":1719405544206,"input":"3","output":""},{"id":1719424022411,"input":"255","output":""},{"id":1719481394489,"input":"2382","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hifzur/work/cses_dsa/bitString.cpp","group":"local","local":true}
