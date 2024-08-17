@@ -43,8 +43,12 @@ int main()
 
    
    
-   
-    cout << firsthalf+centerChar+secondhalf;
+     if(str.length() %2 ==0 ){
+        cout<<firsthalf+secondhalf;
+     }else{
+            cout << firsthalf+centerChar+secondhalf;
+     }
+     
 
     return 0;
 }
