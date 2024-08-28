@@ -14,14 +14,18 @@ int main()
         cin >> arr[i];
     }
     int round = 1;
-    for (int i = 0; i < n; i++)
-    {
-        if (arr[i] <= i)
-        {
-            round++;
-        }
+    
+    int idx[n+1];
+
+    for(int i =0 ; i< n ; i++){
+       idx[arr[i]] = i;
     }
-    cout << round;
+
+    for(int i = 1 ; i<n ; i++) {
+        if(idx[i+1] < idx[i]) round++;
+    } 
+
+    cout<<round;
 
     return 0;
 }
