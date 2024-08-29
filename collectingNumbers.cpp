@@ -6,22 +6,22 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    int n;
+    ll n;
     cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++)
+    ll arr[n];
+    for (ll i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
-    int round = 1;
+    ll round = 1;
     
-    int idx[n+1];
+    ll idx[n+1];
 
-    for(int i =0 ; i< n ; i++){
+    for(ll i =0 ; i< n ; i++){
        idx[arr[i]] = i;
     }
 
-    for(int i = 1 ; i<n ; i++) {
+    for(ll i = 1 ; i<n ; i++) {
         if(idx[i+1] < idx[i]) round++;
     } 
 
