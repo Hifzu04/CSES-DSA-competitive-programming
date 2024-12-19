@@ -2,22 +2,22 @@
 #define ll long long
 using namespace std;
 
-void towerofHanoi(int count, int n, int source, int helper, int dest ){
+void towerofHanoi(vector<pair<int, int>>& moves, int n, int source, int helper, int dest ){
     if(n==1){
-        cout<< count<<"\n";
-        cout<<source<<" "<<dest<<"\n";
+         moves.emplace_back(source,dest);
+        //cout<<"a"<<"\n";
         return;
     }
     
-    towerofHanoi(count, n-1, source, dest, helper);
- //   cout<<source<<" "<<dest<<"\n";      why
+    towerofHanoi(moves, n-1, source, dest, helper);
+   //cout<<"b"<<"\n";
     
 
-    cout<<source<<" "<<dest<<"\n";
+    moves.emplace_back(source,dest);
 
 
-    towerofHanoi(count , n-1, helper, source, dest);
-   // cout<<source<<
+    towerofHanoi(moves , n-1, helper, source, dest);
+    //cout<<"c"<<"\n";
     
     
 
@@ -30,8 +30,14 @@ int main()
     cin.tie(NULL);
     int n ;
     cin>>n;
+    vector<pair<int , int>>moves;
     
-    towerofHanoi(0, n, 1,2,3);
+    towerofHanoi(moves, n, 1,2,3);
+
+    cout<<moves.size()<<"\n";
+    for(auto it : moves){
+        cout<<it.first<<" "<<it.second<<"\n";
+    }
 
 
     return 0;
